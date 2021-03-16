@@ -1,0 +1,45 @@
+//Java Program to demonstrate why we need method overriding  
+//Here, we are calling the method of parent class with child  
+//class object.  
+//Creating a parent class 
+
+class Vehicle{  
+  void run(){System.out.println("Vehicle is running");}  
+} 
+
+//Creating a child class  
+
+class Bike extends Vehicle{  
+  public static void main(String args[]){  
+  //creating an instance of child class  
+  Bike obj = new Bike();  
+  //calling the method with child class instance  
+  obj.run();  
+  }  
+  
+} 
+
+// Output will be 
+ Vehicle is running
+ 
+// Problem is that I have to provide a specific implementation of run() method in subclass that is why we use method overriding.
+// means we may want to modify the implementation of the run method in the child class as below
+
+//Creating a parent class.  
+class Vehicle{  
+  //defining a method  
+  void run(){System.out.println("Vehicle is running");}  
+}  
+//Creating a child class  
+class Bike2 extends Vehicle{  
+  //defining the same method as in the parent class  
+  void run(){System.out.println("Bike is running safely");}  
+  
+  public static void main(String args[]){  
+  Bike2 obj = new Bike2();//creating object  
+  obj.run();//calling method  
+  }  
+}  
+
+// the output will be 
+Bike is running safely
